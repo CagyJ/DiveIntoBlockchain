@@ -3,10 +3,12 @@
 The road to Blockchain Development🃏
 
 
-### Build my Blockchain - ECDSA Node 🗳️
+### ECDSA Node 🗳️
 The first-week assignment from Alchemy University  [link](./ecdsa-node/)
 
 **Introduction**: The project has a client to allow to transfer any funds from one account to another account, so it's a centralized project rather than a decentralized one.
+
+**Aim**: practice the knowledge of public key cryptography, hashes, and digital signatures.
 
 **Upgrade History**:
 1. [Init](https://github.com/CagyJ/DiveIntoBlockchain/commit/af5a1939f1d4bf91bb89fb960f5f4eb7daeddf19): the user can use the address to transfer. There is no public key or private key at all.
