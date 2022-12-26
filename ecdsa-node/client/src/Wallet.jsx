@@ -2,7 +2,6 @@ import server from "./server";
 import * as secp from "ethereum-cryptography/secp256k1"
 import {toHex} from "ethereum-cryptography/utils"
 
-// TODO request with a signature
 function Wallet({ address, setAddress, privateKey, setPrivateKey, balance, setBalance }) {
   async function onChange(evt) {
     const privateKey = evt.target.value;
@@ -30,7 +29,7 @@ function Wallet({ address, setAddress, privateKey, setPrivateKey, balance, setBa
       </label>
 
       <label>
-        Address: {address}
+        Address: {address.slice(0, 10)}...
       </label>
 
       <div className="balance">Balance: {balance}</div>
