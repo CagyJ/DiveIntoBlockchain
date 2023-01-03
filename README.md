@@ -22,3 +22,18 @@ The first-week assignment from Alchemy University  [link](./ecdsa-node/)
 
 **Future TODO**:
 - use the last 20 bytes as the wallet address rather than the public key
+
+
+### UTXO Model 💸
+Mocking UTXO (Unspent Transaction Outputs) model that Biscoin uses.
+
+The transaction here is differ from account-based model (what the bank usually does).
+- Usually have many inputs and outputs
+- Each coin is unique (Fun fact that Bitcoin is the first NFT collection technically)
+- During transactions
+  - Before transactions, all inputs should be un-spent, and it should be greater than the output (actually the sum of all outputs)
+  - The difference between the inputs and outputs is the transaction fee (actually not, some of it should be back to the payer, only a very small amount goes into the miner's pocket)
+- After successful transaction, all inputs are marked as 'spent'
+
+
+
