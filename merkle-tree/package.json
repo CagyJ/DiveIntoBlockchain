@@ -1,0 +1,16 @@
+{
+  "name": "merkle-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MerkleTree.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "crypto": "^1.0.1",
+    "mocha": "^10.2.0"
+  }
+}

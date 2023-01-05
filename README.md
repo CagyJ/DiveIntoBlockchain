@@ -36,4 +36,40 @@ The transaction here is differ from account-based model (what the bank usually d
 - After successful transaction, all inputs are marked as 'spent'
 
 
+### Merkle Tree 🌳
+It is a data-storing structure based on Binary Tree, which allows us to make efficient verifications. 
 
+A Merkle Tree is a collection of hashes reduced to a single hash, and supports to verify whether a single piece of data belongs in the tree without having all of the data. For example, if the Merkle Tree is like this:
+```
+      Root
+     /    \
+    ABCD   E
+    / \    |
+   AB  CD  E
+  / \  / \ |
+  A B  C D E
+```
+What we want to prove is 'C' in the root, and if we create the root from 'C': Hash(Hash(AB + Hash(C + D)) + E), there are only three hashes we need to know: 'AB', 'D' and 'E'. Be careful that the order in which they should be combined is relevant, and the reverse doesn't make the same hash.
+
+Therefore, if the hash of the collocation we made from 'C' is equal to the hash of the original Root, then we can say 'C' is in the tree.
+
+In this implementation of Merkle Tree, the hash of the root can be gotten via `getRoot()` method, and `getProof()` method getting an index returns the respective orderly proof. 
+- The structure of the proof is an array, including objects that look like this:
+  ```
+  {data: 'C', left: true}
+  ```
+- For the example above, the proof should be
+  ```
+  [
+    {data: 'D', left: false},
+    {data: 'AB', left: true},
+    {data: 'E', left: false}
+  ]
+  ```
+
+There is a util method for verification called `verifyProof()`, which accepts four arguments:
+- `proof`: the array of objects
+- `node`: what we want to prove
+- `root`: the valid root
+- `concat`: the method used to combine the nodes
+It combines the `node` with the proof in order to get a root, then verify whether these two roots are equal.
