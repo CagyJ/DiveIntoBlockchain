@@ -73,3 +73,9 @@ There is a util method for verification called `verifyProof()`, which accepts fo
 - `root`: the valid root
 - `concat`: the method used to combine the nodes
 It combines the `node` with the proof in order to get a root, then verify whether these two roots are equal.
+
+### Merkle Tree Gift List 🎁
+
+It only allows to store 32 bytes value in the server memory to verify whether the name is in the nice list.
+- The client is like a prover, and the server is like a verifier.
+- Source: [Gift List](https://github.com/CagyJ/GiftList)
